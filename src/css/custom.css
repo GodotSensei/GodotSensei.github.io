@@ -1,0 +1,60 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* Godot-inspired primary palette */
+  --ifm-color-primary: #478cbf;
+  --ifm-color-primary-dark: #3c77a8;
+  --ifm-color-primary-darker: #366c98;
+  --ifm-color-primary-darkest: #2b587d;
+  --ifm-color-primary-light: #5daee2;
+  --ifm-color-primary-lighter: #66b8eb;
+  --ifm-color-primary-lightest: #7cc5f0;
+
+  /* Code and highlight tweaks */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(71, 140, 191, 0.1);
+}
+
+/* Dark mode - lighter blues for contrast */
+[data-theme='dark'] {
+  --ifm-color-primary: #66b8eb;
+  --ifm-color-primary-dark: #5daee2;
+  --ifm-color-primary-darker: #529fd1;
+  --ifm-color-primary-darkest: #478cbf;
+  --ifm-color-primary-light: #7cc5f0;
+  --ifm-color-primary-lighter: #8dd1f5;
+  --ifm-color-primary-lightest: #a2dcfa;
+
+  /* Slightly stronger highlight visibility in dark mode */
+  --docusaurus-highlighted-code-line-bg: rgba(71, 140, 191, 0.25);
+}
+
+.markdown img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #8dd1f550;
+  border-radius: 6px;
+  padding: 4px;
+  margin: 0.7rem 0;
+  box-sizing: border-box;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────────────────── */
+
+
+[data-theme='dark'] .navbar {
+  background: rgba(13, 24, 37, 0.85);
+  border-bottom: 1px solid rgba(102, 184, 235, 0.1);
+}
+
+[data-theme='light'] .navbar {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(71, 140, 191, 0.1);
+}

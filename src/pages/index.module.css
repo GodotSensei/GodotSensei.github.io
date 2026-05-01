@@ -1,0 +1,129 @@
+/* ── Hero Banner ─────────────────────────────────────────────────────────────── */
+
+.heroBanner {
+  padding: 6rem 0 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Dark: deep dark, #66b8eb as the dominant center */
+  background:
+    radial-gradient(ellipse 65% 75% at 50% 45%, #1a4e72 0%, #0d2540 50%, #070e1a 100%);
+}
+
+[data-theme='light'] .heroBanner {
+  /* Light: white center fading into #66b8eb tinted edges */
+  background:
+    radial-gradient(ellipse 65% 75% at 50% 45%, #ffffff 0%, #d6edf9 45%, #b3daf4 100%);
+}
+
+/* Soft pulsing glow */
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 500px at 50% 40%, rgba(102, 184, 235, 0.12) 0%, transparent 65%);
+  animation: heroPulse 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Bottom accent line */
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #66b8eb 25%,
+    #a2dcfa 50%,
+    #66b8eb 75%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+[data-theme='light'] .heroBanner::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #478cbf 25%,
+    #66b8eb 50%,
+    #478cbf 75%,
+    transparent 100%
+  );
+  opacity: 0.5;
+}
+
+@keyframes heroPulse {
+  from { opacity: 0.5; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.06); }
+}
+
+/* ── Hero Content ────────────────────────────────────────────────────────────── */
+
+.heroBanner .container {
+  position: relative;
+  z-index: 1;
+  animation: heroReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark: #66b8eb as the solid title color */
+.heroBanner :global(.hero__title) {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: #66b8eb;
+  -webkit-text-fill-color: #66b8eb;
+}
+
+/* Light: dark navy gradient text */
+[data-theme='light'] .heroBanner :global(.hero__title) {
+  background: linear-gradient(130deg, #0d2540 0%, #2b587d 50%, #478cbf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroBanner :global(.hero__subtitle) {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: rgba(102, 184, 235, 0.7);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.65;
+  font-weight: 400;
+  animation: heroReveal 0.65s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-theme='light'] .heroBanner :global(.hero__subtitle) {
+  color: #2b587d;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 1.5rem 3.5rem;
+  }
+
+  .heroBanner :global(.hero__title) {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroBanner {
+    padding: 3rem 1rem 2.5rem;
+  }
+}
