@@ -1,0 +1,364 @@
+/* ── Testimonials Section (Focused Carousel) ─────────────────────── */
+
+.sectionWrapper {
+  padding: 4.5rem 0 4rem;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ef4444;
+  margin-bottom: 0.6rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: #f8fafc;
+}
+
+[data-theme='light'] .sectionTitle {
+  color: #0f172a;
+}
+
+.sectionSubtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+[data-theme='light'] .sectionSubtitle {
+  color: #475569;
+}
+
+/* ── Carousel Container ───────────────────────────────────────────── */
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 820px;
+  margin: 0 auto 1.5rem;
+}
+
+.cardWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Navigation Arrow Buttons */
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(13, 25, 42, 0.7);
+  border: 1px solid rgba(102, 184, 235, 0.25);
+  color: #7dd3fc;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .navButton {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0284c7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.navButton:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+[data-theme='light'] .navButton:hover {
+  background: #f1f5f9;
+  border-color: #0284c7;
+  color: #0284c7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Single Focused Comment Card ──────────────────────────────────── */
+
+.commentCard {
+  background: rgba(13, 25, 42, 0.75);
+  border: 1px solid rgba(102, 184, 235, 0.22);
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  backdrop-filter: blur(12px);
+  animation: cardFadeIn 0.35s ease-out;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+[data-theme='light'] .commentCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.commentCard:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Very subtle hover shadow in light mode */
+[data-theme='light'] .commentCard:hover {
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 16px rgba(71, 140, 191, 0.09);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.authorGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.avatarLink {
+  text-decoration: none !important;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.authorMeta {
+  min-width: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.authorName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9 !important;
+  text-decoration: none !important;
+}
+
+[data-theme='light'] .authorName {
+  color: #0f172a !important;
+}
+
+.authorName:hover {
+  text-decoration: underline !important;
+}
+
+.timeAgo {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* Video link */
+.videoLinkRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+}
+
+.onText {
+  color: #64748b;
+}
+
+.videoTitleLink {
+  color: #38bdf8 !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.videoTitleLink i {
+  font-size: 0.68rem;
+}
+
+[data-theme='light'] .videoTitleLink {
+  color: #0284c7 !important;
+}
+
+.videoTitleLink:hover {
+  text-decoration: underline !important;
+}
+
+.topRightBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  color: #ef4444;
+}
+
+.counterBadge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+[data-theme='light'] .counterBadge {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* Quote */
+.commentQuote {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+}
+
+[data-theme='light'] .commentQuote {
+  color: #334155;
+}
+
+/* ── Pagination Dots ──────────────────────────────────────────────── */
+
+.dotsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(102, 184, 235, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+[data-theme='light'] .dot {
+  background: #cbd5e1;
+}
+
+.dotActive {
+  width: 24px;
+  background: #0284c7;
+}
+
+[data-theme='dark'] .dotActive {
+  background: #38bdf8;
+}
+
+/* Pause Hint */
+.pauseHint {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.pauseHint span {
+  font-size: 0.78rem;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+
+@media screen and (max-width: 768px) {
+  .carouselContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .commentCard {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .videoTitleLink {
+    max-width: 220px;
+  }
+
+  .commentQuote {
+    font-size: 1rem;
+  }
+}

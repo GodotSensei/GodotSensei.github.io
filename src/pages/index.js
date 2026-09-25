@@ -1,41 +1,27 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
-import PromoSectionComponent from '../components/PromoSection/PromoSection';
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-
-// ── Page ───────────────────────────────────────────────────────────────────────
+import HeroSection from '../components/HeroSection/HeroSection';
+import FeaturedCourses from '../components/FeaturedCourses/FeaturedCourses';
+import WhySensei from '../components/WhySensei/WhySensei';
+import Testimonials from '../components/Testimonials/Testimonials';
+import CommunityBanner from '../components/CommunityBanner/CommunityBanner';
+import FAQ from '../components/FAQ/FAQ';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title= "Godot Sensei"
-      description="Level Up in Godot">
-      <HomepageHeader />
+      title="Level Up in Godot 4 • Tutorials and Companion Docs"
+      description="Practical Godot 4 tutorials and step-by-step companion documentation. Learn game development with hands-on video lessons and clean code guides."
+    >
       <main>
-        <PromoSectionComponent />
-        <HomepageFeatures />
+        <HeroSection />
+        <FeaturedCourses />
+        <WhySensei />
+        <Testimonials />
+        <CommunityBanner />
+        <FAQ />
       </main>
     </Layout>
   );

@@ -18,6 +18,7 @@ const config = {
   projectName: 'godotsenei',
 
   onBrokenLinks: 'throw',
+  onBrokenAnchors: 'ignore',
 
   i18n: {
     defaultLocale: 'en',
@@ -44,15 +45,20 @@ const config = {
     ],
   ],
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap',
+      type: 'text/css',
+    },
+    {
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+      type: 'text/css',
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      stylesheets: [
-        {
-          href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap',
-          type: 'text/css',
-        },
-      ],
       // Default OG image when sharing any page (1200x630px recommended)
       image: 'img/social-card.png',
 
@@ -71,7 +77,9 @@ const config = {
       ],
 
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
 
       navbar: {
@@ -82,10 +90,21 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: '/docs/intro',
+            label: 'All Docs',
             position: 'left',
-            label: 'Tutorials',
+            activeBaseRegex: '^/docs/(?!category/walking-sim|walking-sim).*',
+          },
+          {
+            to: '/docs/category/walking-sim',
+            label: 'Beginner Course',
+            position: 'left',
+            activeBaseRegex: '^/docs/(category/)?walking-sim.*',
+          },
+          {
+            href: '/#testimonials',
+            label: 'Reviews',
+            position: 'left',
           },
           {
             href: 'https://www.youtube.com/@godotsensei',
@@ -96,7 +115,56 @@ const config = {
       },
 
       footer: {
-        copyright: `© ${new Date().getFullYear()} Godot Sensei - Made with 💙`,
+        links: [
+          {
+            title: 'Courses and Docs',
+            items: [
+              {
+                label: 'All Documentation',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Walking Simulator Course',
+                to: '/docs/category/walking-sim',
+              },
+              {
+                label: 'Environment and Shaders',
+                to: '/docs/walking-sim/Grass Water Sky',
+              },
+              {
+                label: 'Project Settings and Export',
+                to: '/docs/walking-sim/Project settings and export',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'YouTube (@godotsensei)',
+                href: 'https://www.youtube.com/@godotsensei',
+              },
+              {
+                label: 'Godot Engine Official',
+                href: 'https://godotengine.org',
+              },
+            ],
+          },
+          {
+            title: 'Platform',
+            items: [
+              {
+                label: 'Learner Reviews',
+                href: '/#testimonials',
+              },
+              {
+                label: 'Frequently Asked Questions',
+                href: '/#faq',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright ${new Date().getFullYear()} Godot Sensei. Free and open Godot 4 education.`,
       },
 
       prism: {

@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -52,9 +54,65 @@
 [data-theme='dark'] .navbar {
   background: rgba(13, 24, 37, 0.85);
   border-bottom: 1px solid rgba(102, 184, 235, 0.1);
+  backdrop-filter: blur(12px);
 }
 
 [data-theme='light'] .navbar {
   background: rgba(255, 255, 255, 0.88);
   border-bottom: 1px solid rgba(71, 140, 191, 0.1);
+  backdrop-filter: blur(12px);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Polished footer styling */
+[data-theme='dark'] .footer {
+  background-color: #070e18 !important;
+  border-top: 1px solid rgba(102, 184, 235, 0.15);
+}
+
+[data-theme='light'] .footer {
+  background-color: #f8fafc !important;
+  border-top: 1px solid rgba(71, 140, 191, 0.18);
+}
+
+[data-theme='dark'] .footer__title {
+  color: #38bdf8;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='light'] .footer__title {
+  color: #0284c7;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: #38bdf8;
+}
+
+[data-theme='light'] .footer__link-item {
+  color: #475569;
+  transition: color 0.2s ease;
+}
+
+[data-theme='light'] .footer__link-item:hover {
+  color: #0284c7;
+}
+
+[data-theme='light'] .footer__copyright {
+  color: #64748b;
+}
+
+[data-theme='dark'] .footer__copyright {
+  color: #94a3b8;
+}
+

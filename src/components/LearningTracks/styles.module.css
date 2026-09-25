@@ -1,0 +1,240 @@
+/* ── Learning Tracks Section ───────────────────────────────────────── */
+
+.sectionWrapper {
+  padding: 5rem 0;
+  position: relative;
+  background: rgba(7, 14, 26, 0.6);
+  border-top: 1px solid rgba(102, 184, 235, 0.12);
+  border-bottom: 1px solid rgba(102, 184, 235, 0.12);
+}
+
+[data-theme='light'] .sectionWrapper {
+  background: #f8fafc;
+  border-top: 1px solid rgba(71, 140, 191, 0.15);
+  border-bottom: 1px solid rgba(71, 140, 191, 0.15);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.sectionEyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme='light'] .sectionEyebrow {
+  color: #0284c7;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #f8fafc;
+}
+
+[data-theme='light'] .sectionTitle {
+  color: #0f172a;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+[data-theme='light'] .sectionSubtitle {
+  color: #475569;
+}
+
+/* ── Tracks Grid ──────────────────────────────────────────────────── */
+
+.tracksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.trackCard {
+  display: flex;
+  flex-direction: column;
+  background: rgba(13, 25, 42, 0.7);
+  border: 1px solid rgba(102, 184, 235, 0.18);
+  border-radius: 16px;
+  padding: 1.85rem 1.65rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+[data-theme='light'] .trackCard {
+  background: #ffffff;
+  border: 1px solid rgba(71, 140, 191, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.trackCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow:
+    0 16px 36px -10px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(56, 189, 248, 0.12);
+}
+
+[data-theme='light'] .trackCard:hover {
+  box-shadow:
+    0 16px 36px -10px rgba(15, 23, 42, 0.12),
+    0 0 25px rgba(2, 132, 199, 0.1);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid;
+}
+
+[data-theme='light'] .iconCircle {
+  background: rgba(71, 140, 191, 0.08);
+}
+
+.trackBadge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(102, 184, 235, 0.12);
+  color: #7dd3fc;
+  border: 1px solid rgba(102, 184, 235, 0.25);
+}
+
+[data-theme='light'] .trackBadge {
+  background: rgba(71, 140, 191, 0.1);
+  color: #0369a1;
+  border: 1px solid rgba(71, 140, 191, 0.2);
+}
+
+.trackTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.65rem;
+  color: #f1f5f9;
+}
+
+[data-theme='light'] .trackTitle {
+  color: #0f172a;
+}
+
+.trackDesc {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme='light'] .trackDesc {
+  color: #475569;
+}
+
+.topicList {
+  flex-grow: 1;
+  margin-bottom: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] .topicList {
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.topicLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.65rem;
+}
+
+.topicList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.topicList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #cbd5e1;
+}
+
+[data-theme='light'] .topicList li {
+  color: #334155;
+}
+
+.checkIcon {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+[data-theme='light'] .checkIcon {
+  color: #0284c7;
+}
+
+.cardFooter {
+  margin-top: auto;
+}
+
+.trackLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #38bdf8 !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.trackLink:hover {
+  transform: translateX(3px);
+  color: #7dd3fc !important;
+}
+
+[data-theme='light'] .trackLink {
+  color: #0284c7 !important;
+}
+
+[data-theme='light'] .trackLink:hover {
+  color: #0369a1 !important;
+}

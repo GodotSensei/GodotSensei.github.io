@@ -1,0 +1,314 @@
+/* ── Featured Courses Section ────────────────────────────────────── */
+
+.sectionWrapper {
+  padding: 4.5rem 0;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  margin-bottom: 0.6rem;
+}
+
+[data-theme='light'] .sectionEyebrow {
+  color: #0284c7;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: #f8fafc;
+}
+
+[data-theme='light'] .sectionTitle {
+  color: #0f172a;
+}
+
+.sectionSubtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+[data-theme='light'] .sectionSubtitle {
+  color: #475569;
+}
+
+/* ── Course Rows ──────────────────────────────────────────────────── */
+
+.coursesList {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.courseRow {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.25rem;
+  background: rgba(13, 25, 42, 0.6);
+  border: 1px solid rgba(102, 184, 235, 0.2);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+[data-theme='light'] .courseRow {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.courseRow:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='light'] .courseRow:hover {
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 16px rgba(71, 140, 191, 0.08);
+}
+
+.courseRowReverse {
+  flex-direction: row-reverse;
+}
+
+/* Text Column */
+.textColumn {
+  flex: 1.1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  margin-bottom: 0.85rem;
+}
+
+[data-theme='light'] .badge {
+  background: rgba(2, 132, 199, 0.08);
+  color: #0284c7;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.courseTitle {
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+
+[data-theme='light'] .courseTitle {
+  color: #0f172a;
+}
+
+.courseSubtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 0.85rem;
+}
+
+[data-theme='light'] .courseSubtitle {
+  color: #0284c7;
+}
+
+.courseDesc {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+}
+
+[data-theme='light'] .courseDesc {
+  color: #475569;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.metaPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='light'] .metaPill {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.metaPill i {
+  color: #38bdf8;
+  font-size: 0.78rem;
+}
+
+[data-theme='light'] .metaPill i {
+  color: #0284c7;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.primaryLinkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s ease;
+}
+
+.primaryLinkBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+}
+
+.secondaryLinkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ef4444 !important;
+  text-decoration: none !important;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .secondaryLinkBtn {
+  color: #dc2626 !important;
+  background: #ffffff;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.secondaryLinkBtn:hover {
+  background: #ef4444;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Image Column */
+.imageColumn {
+  flex: 0.9;
+}
+
+.imageCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(102, 184, 235, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+[data-theme='light'] .imageCard {
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.imageCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Very light, barely noticeable shadow on hover in light mode */
+[data-theme='light'] .imageCard:hover {
+  border-color: rgba(71, 140, 191, 0.3);
+  box-shadow: 0 4px 14px rgba(71, 140, 191, 0.1);
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageCard:hover .courseImage {
+  transform: scale(1.02);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+
+@media screen and (max-width: 900px) {
+  .courseRow,
+  .courseRowReverse {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .textColumn,
+  .imageColumn {
+    width: 100%;
+    flex: auto;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryLinkBtn,
+  .secondaryLinkBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
