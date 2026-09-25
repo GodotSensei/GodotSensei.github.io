@@ -1,14 +1,20 @@
 /* ── Featured Courses Section ────────────────────────────────────── */
 
 .sectionWrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 4.5rem 0;
   position: relative;
+  box-sizing: border-box;
 }
 
 .sectionHeader {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3rem;
 }
 
 .sectionEyebrow {
@@ -124,68 +130,22 @@
   letter-spacing: -0.015em;
   line-height: 1.25;
   color: #f1f5f9;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.6rem;
 }
 
 [data-theme='light'] .courseTitle {
   color: #0f172a;
 }
 
-.courseSubtitle {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #38bdf8;
-  margin-bottom: 0.85rem;
-}
-
-[data-theme='light'] .courseSubtitle {
-  color: #0284c7;
-}
-
 .courseDesc {
-  font-size: 0.96rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.65;
   color: #94a3b8;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 [data-theme='light'] .courseDesc {
   color: #475569;
-}
-
-.metaRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.75rem;
-}
-
-.metaPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.65rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.05);
-  color: #cbd5e1;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-[data-theme='light'] .metaPill {
-  background: #f1f5f9;
-  color: #334155;
-  border: 1px solid #e2e8f0;
-}
-
-.metaPill i {
-  color: #38bdf8;
-  font-size: 0.78rem;
-}
-
-[data-theme='light'] .metaPill i {
-  color: #0284c7;
 }
 
 .ctaGroup {
@@ -198,9 +158,9 @@
 .primaryLinkBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.7rem 1.35rem;
-  border-radius: 8px;
+  gap: 0.5rem;
+  padding: 0.75rem 1.45rem;
+  border-radius: 10px;
   font-size: 0.92rem;
   font-weight: 700;
   color: #ffffff !important;
@@ -215,32 +175,39 @@
   box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
 }
 
+/* Secondary Button: Clean neutral styling matching Hero's Browse Docs */
 .secondaryLinkBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.7rem 1.3rem;
-  border-radius: 8px;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 10px;
   font-size: 0.92rem;
   font-weight: 600;
-  color: #ef4444 !important;
   text-decoration: none !important;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #e2e8f0 !important;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.2s ease;
 }
 
 [data-theme='light'] .secondaryLinkBtn {
-  color: #dc2626 !important;
+  color: #0f172a !important;
   background: #ffffff;
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  border: 1px solid #cbd5e1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .secondaryLinkBtn:hover {
-  background: #ef4444;
-  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+[data-theme='light'] .secondaryLinkBtn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a !important;
 }
 
 /* Image Column */

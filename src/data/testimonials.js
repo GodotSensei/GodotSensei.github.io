@@ -7,7 +7,7 @@ export const youtubeTestimonials = [
   {
     id: 1,
     comment:
-      'The 30-minute walking simulator course made Godot 4 finally click for me. Having the written companion docs on this site saved me hours of pausing video to squint at code.',
+      'The 30-minute walking simulator course made Godot finally click for me. Having the written companion docs on this site saved me hours of pausing video to squint at code.',
     authorName: 'Alex Rivera',
     authorChannelUrl: 'https://www.youtube.com/@alex_gamedev',
     authorAvatarUrl: '',
@@ -39,7 +39,7 @@ export const youtubeTestimonials = [
     authorAvatarUrl: '',
     authorInitials: 'ML',
     avatarColor: '#db2777',
-    videoTitle: 'Stylized Nature, EZ Tree and Foliage Shaders in Godot 4',
+    videoTitle: 'Stylized Nature, EZ Tree and Foliage Shaders in Godot',
     videoUrl: 'https://www.youtube.com/@godotsensei',
     timeAgo: '3 weeks ago',
   },
@@ -72,7 +72,7 @@ export const youtubeTestimonials = [
   {
     id: 6,
     comment:
-      'Hands down the cleanest Godot 4 tutorials. Watching the video for the workflow and having this doc site for reference code is the best way to learn.',
+      'Hands down the cleanest Godot tutorials. Watching the video for the workflow and having this doc site for reference code is the best way to learn.',
     authorName: 'Marcus Vance',
     authorChannelUrl: 'https://www.youtube.com/@marcus_v',
     authorAvatarUrl: '',

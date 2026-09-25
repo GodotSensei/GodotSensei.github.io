@@ -8,7 +8,7 @@ export default function FeaturedCourses() {
     <section className={styles.sectionWrapper}>
       <div className="container">
         {/* Section Header */}
-        <div className={styles.sectionHeader}>
+        <div className={styles.sectionHeader} data-aos="fade-up">
           <div className={styles.sectionEyebrow}>
             <i className="fa-solid fa-gamepad"></i>
             Hands-on Projects
@@ -21,10 +21,12 @@ export default function FeaturedCourses() {
 
         {/* Courses List */}
         <div className={styles.coursesList}>
-          {featuredCourses.map((course) => (
+          {featuredCourses.map((course, idx) => (
             <div
               key={course.id}
               className={`${styles.courseRow} ${course.reverse ? styles.courseRowReverse : ''}`}
+              data-aos="fade-up"
+              data-aos-delay={idx * 150}
             >
               {/* Text Side */}
               <div className={styles.textColumn}>
@@ -34,18 +36,7 @@ export default function FeaturedCourses() {
                 </span>
 
                 <h3 className={styles.courseTitle}>{course.title}</h3>
-                <h4 className={styles.courseSubtitle}>{course.subtitle}</h4>
                 <p className={styles.courseDesc}>{course.description}</p>
-
-                {/* Metadata tags with FontAwesome */}
-                <div className={styles.metaRow}>
-                  {course.meta.map((item, mIdx) => (
-                    <span key={mIdx} className={styles.metaPill}>
-                      <i className={item.icon}></i>
-                      {item.text}
-                    </span>
-                  ))}
-                </div>
 
                 {/* CTA buttons */}
                 <div className={styles.ctaGroup}>
@@ -64,7 +55,7 @@ export default function FeaturedCourses() {
                       rel="noopener noreferrer"
                       className={styles.secondaryLinkBtn}
                     >
-                      <i className="fa-brands fa-youtube"></i>
+                      <i className="fa-solid fa-play"></i>
                       {course.secondaryLabel}
                     </a>
                   )}

@@ -1,4 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
 
 /**
  * Any CSS included here will be global. The classic template
@@ -18,7 +19,6 @@
   --ifm-color-primary-lightest: #7cc5f0;
 
   /* Code and highlight tweaks */
-
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(71, 140, 191, 0.1);
 }
@@ -48,71 +48,255 @@
   box-sizing: border-box;
 }
 
-/* ── Navbar ──────────────────────────────────────────────────────────────────── */
+/* ── Navbar & Footer Colors (Infima Native Tokens) ─────────────────────────── */
 
-
-[data-theme='dark'] .navbar {
-  background: rgba(13, 24, 37, 0.85);
-  border-bottom: 1px solid rgba(102, 184, 235, 0.1);
-  backdrop-filter: blur(12px);
+[data-theme='light'] {
+  --ifm-navbar-background-color: #154c79;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #bae6fd;
+  --ifm-footer-background-color: #154c79;
+  --ifm-footer-color: #f0f9ff;
+  --ifm-footer-link-color: #dbeafe;
+  --ifm-footer-link-hover-color: #ffffff;
+  --ifm-footer-title-color: #ffffff;
+  --ifm-menu-color: #0f172a;
+  --ifm-menu-color-active: #0284c7;
+  --ifm-menu-color-background-active: rgba(2, 132, 199, 0.1);
+  --ifm-menu-color-background-hover: rgba(2, 132, 199, 0.06);
 }
 
-[data-theme='light'] .navbar {
-  background: rgba(255, 255, 255, 0.88);
-  border-bottom: 1px solid rgba(71, 140, 191, 0.1);
-  backdrop-filter: blur(12px);
+[data-theme='dark'] {
+  --ifm-navbar-background-color: #091a2e;
+  --ifm-navbar-link-color: #f1f5f9;
+  --ifm-navbar-link-hover-color: #38bdf8;
+  --ifm-footer-background-color: #091a2e;
+  --ifm-footer-color: #cbd5e1;
+  --ifm-footer-link-color: #94a3b8;
+  --ifm-footer-link-hover-color: #38bdf8;
+  --ifm-footer-title-color: #38bdf8;
+  --ifm-menu-color: #cbd5e1;
+  --ifm-menu-color-active: #38bdf8;
+  --ifm-menu-color-background-active: rgba(56, 189, 248, 0.16);
+  --ifm-menu-color-background-hover: rgba(56, 189, 248, 0.1);
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(102, 184, 235, 0.2);
+}
+
+[data-theme='light'] .navbar__title,
+[data-theme='light'] .navbar__link,
+[data-theme='light'] .navbar__toggle {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .navbar__title,
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar__toggle {
+  color: #f1f5f9 !important;
+}
+
+/* ── Always White Icons (Sun, Moon, Hamburger, Close) on Blue Navbar ─────────── */
+
+.navbar__toggle,
+.navbar__toggle svg,
+.navbar-sidebar__close,
+.navbar-sidebar__close svg,
+.navbar [class*='colorModeToggle'] svg,
+.navbar [class*='toggleButton'] svg,
+.navbar-sidebar [class*='colorModeToggle'] svg,
+.navbar-sidebar [class*='toggleButton'] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  opacity: 1 !important;
+}
+
+[data-theme='light'] .navbar [class*='toggleButton'] svg path,
+[data-theme='dark'] .navbar [class*='toggleButton'] svg path,
+.navbar-sidebar [class*='toggleButton'] svg path {
+  fill: #ffffff !important;
+}
+
+.navbar [class*='toggleButton']:hover,
+.navbar-sidebar [class*='toggleButton']:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ── Mobile Sidebar (Drawer) ─────────────────────────────────────────────────── */
+
+.navbar-sidebar {
+  box-shadow: 2px 0 24px rgba(0, 0, 0, 0.45);
+}
+
+.navbar-sidebar__brand {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 1rem !important;
+}
+
+.navbar-sidebar__brand .navbar__brand {
+  margin-right: auto !important;
+}
+
+/* Align Sun/Moon toggle neatly next to the Close button */
+.navbar-sidebar__brand [class*='colorModeToggle'] {
+  margin-left: auto !important;
+  margin-right: 0.5rem !important;
+}
+
+.navbar-sidebar__brand .navbar-sidebar__close {
+  margin-left: 0 !important;
+}
+
+.navbar-sidebar__brand .navbar__title {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* "← Back to main menu" button inside Docs mobile view */
+.navbar-sidebar__back {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-sidebar__back:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #bae6fd !important;
+}
+
+/* Links inside mobile drawer (Always white on blue background) */
+.navbar-sidebar .menu__link {
+  color: #ffffff !important;
+  font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.navbar-sidebar .menu__link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+.navbar-sidebar .menu__link--active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.24) !important;
+  font-weight: 700 !important;
+}
+
+/* Desktop Docs Sidebar in light mode (Black/dark readable text) */
+[data-theme='light'] .theme-doc-sidebar-container .menu__link {
+  color: #0f172a;
+}
+
+[data-theme='light'] .theme-doc-sidebar-container .menu__link:hover {
+  color: #0284c7;
+  background-color: rgba(2, 132, 199, 0.08);
+}
+
+[data-theme='light'] .theme-doc-sidebar-container .menu__link--active {
+  color: #0284c7;
+  background-color: rgba(2, 132, 199, 0.12);
+  font-weight: 700;
+}
+
+/* Make category down/expand arrows in mobile drawer pure white */
+.navbar-sidebar .menu__caret,
+.navbar-sidebar .menu__caret:before,
+.navbar-sidebar .menu__link--sublist:after,
+.navbar-sidebar .menu__link--sublist-caret:after,
+.navbar-sidebar .menu__caret svg,
+.navbar-sidebar .menu__link--sublist-caret svg {
+  filter: brightness(0) invert(1) !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  opacity: 0.95 !important;
+}
+
+/* Top mobile bar */
+@media (max-width: 996px) {
+  .navbar__inner {
+    padding: 0 0.75rem;
+    align-items: center;
+  }
+
+  .navbar__brand {
+    margin-right: auto;
+    max-width: calc(100% - 110px);
+  }
+
+  .navbar__title {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navbar__toggle {
+    margin-right: 0.5rem;
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Polished footer styling */
+/* ── Footer (Godot Blue Theme) ───────────────────────────────────────────────── */
+
 [data-theme='dark'] .footer {
-  background-color: #070e18 !important;
-  border-top: 1px solid rgba(102, 184, 235, 0.15);
+  background-color: #091a2e !important;
+  border-top: 1px solid rgba(102, 184, 235, 0.2);
 }
 
 [data-theme='light'] .footer {
-  background-color: #f8fafc !important;
-  border-top: 1px solid rgba(71, 140, 191, 0.18);
+  background-color: #154c79 !important;
+  border-top: 1px solid #103c60;
+  color: #f0f9ff;
 }
 
 [data-theme='dark'] .footer__title {
-  color: #38bdf8;
+  color: #38bdf8 !important;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 [data-theme='light'] .footer__title {
-  color: #0284c7;
+  color: #ffffff !important;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 [data-theme='dark'] .footer__link-item {
-  color: #94a3b8;
+  color: #cbd5e1 !important;
   transition: color 0.2s ease;
 }
 
 [data-theme='dark'] .footer__link-item:hover {
-  color: #38bdf8;
+  color: #38bdf8 !important;
 }
 
 [data-theme='light'] .footer__link-item {
-  color: #475569;
+  color: #dbeafe !important;
   transition: color 0.2s ease;
 }
 
 [data-theme='light'] .footer__link-item:hover {
-  color: #0284c7;
+  color: #ffffff !important;
+  text-decoration: underline;
 }
 
 [data-theme='light'] .footer__copyright {
-  color: #64748b;
+  color: #bfdbfe !important;
 }
 
 [data-theme='dark'] .footer__copyright {
-  color: #94a3b8;
+  color: #94a3b8 !important;
 }
 

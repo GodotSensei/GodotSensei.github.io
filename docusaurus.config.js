@@ -54,6 +54,17 @@ const config = {
       href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
       type: 'text/css',
     },
+    {
+      href: 'https://unpkg.com/aos@2.3.1/dist/aos.css',
+      type: 'text/css',
+    },
+  ],
+
+  scripts: [
+    {
+      src: 'https://unpkg.com/aos@2.3.1/dist/aos.js',
+      async: true,
+    },
   ],
 
   themeConfig:

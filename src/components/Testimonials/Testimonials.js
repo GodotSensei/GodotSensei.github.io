@@ -34,7 +34,7 @@ export default function Testimonials() {
     <section className={styles.sectionWrapper} id="testimonials">
       <div className="container">
         {/* Section Header */}
-        <div className={styles.sectionHeader}>
+        <div className={styles.sectionHeader} data-aos="fade-up">
           <div className={styles.sectionEyebrow}>
             <i className="fa-brands fa-youtube"></i>
             YouTube Comments
@@ -45,16 +45,18 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Carousel Container (One at a time) */}
+        {/* Carousel Container */}
         <div
           className={styles.carouselContainer}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
-          {/* Previous Arrow Button */}
+          {/* Desktop Previous Arrow Button */}
           <button
             type="button"
-            className={`${styles.navButton} ${styles.prevButton}`}
+            className={`${styles.navButton} ${styles.desktopNavBtn}`}
             onClick={prevSlide}
             aria-label="Previous review"
           >
@@ -121,13 +123,10 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                {/* Right: Badge & Counter */}
-                <div className={styles.topRightBadge}>
-                  <span className={styles.counterBadge}>
-                    {currentIndex + 1} / {total}
-                  </span>
+                {/* Right: Badge */}
+                {/* <div className={styles.topRightBadge}>
                   <i className="fa-brands fa-youtube fa-lg" title="YouTube Comment"></i>
-                </div>
+                </div> */}
               </div>
 
               {/* Comment Content */}
@@ -137,10 +136,30 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Next Arrow Button */}
+          {/* Desktop Next Arrow Button */}
           <button
             type="button"
-            className={`${styles.navButton} ${styles.nextButton}`}
+            className={`${styles.navButton} ${styles.desktopNavBtn}`}
+            onClick={nextSlide}
+            aria-label="Next review"
+          >
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        {/* Mobile Navigation Row (Left & Right arrows adjacent together) */}
+        <div className={styles.mobileNavRow}>
+          <button
+            type="button"
+            className={styles.navButton}
+            onClick={prevSlide}
+            aria-label="Previous review"
+          >
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            type="button"
+            className={styles.navButton}
             onClick={nextSlide}
             aria-label="Next review"
           >
@@ -159,13 +178,6 @@ export default function Testimonials() {
               aria-label={`Go to review ${idx + 1}`}
             />
           ))}
-        </div>
-
-        {/* Hover Pause Hint */}
-        <div className={styles.pauseHint}>
-          <span>
-            <i className="fa-solid fa-pause"></i> Auto-advancing every 6s (hover to pause)
-          </span>
         </div>
       </div>
     </section>

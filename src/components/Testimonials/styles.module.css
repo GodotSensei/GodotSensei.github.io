@@ -1,8 +1,9 @@
 /* ── Testimonials Section (Focused Carousel) ─────────────────────── */
 
 .sectionWrapper {
-  padding: 4.5rem 0 4rem;
+  padding: 4.5rem 0 1.5rem;
   position: relative;
+  box-sizing: border-box;
 }
 
 .sectionHeader {
@@ -19,8 +20,12 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #ef4444;
+  color: #38bdf8;
   margin-bottom: 0.6rem;
+}
+
+[data-theme='light'] .sectionEyebrow {
+  color: #0284c7;
 }
 
 .sectionTitle {
@@ -257,21 +262,11 @@
   align-items: center;
   gap: 0.65rem;
   flex-shrink: 0;
-  color: #ef4444;
+  color: #38bdf8;
 }
 
-.counterBadge {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
-}
-
-[data-theme='light'] .counterBadge {
-  background: #f1f5f9;
-  color: #475569;
+[data-theme='light'] .topRightBadge {
+  color: #0284c7;
 }
 
 /* Quote */
@@ -287,6 +282,12 @@
 
 [data-theme='light'] .commentQuote {
   color: #334155;
+}
+
+/* ── Mobile Navigation Row (Adjacent buttons) ─────────────────────── */
+
+.mobileNavRow {
+  display: none;
 }
 
 /* ── Pagination Dots ──────────────────────────────────────────────── */
@@ -323,26 +324,24 @@
   background: #38bdf8;
 }
 
-/* Pause Hint */
-.pauseHint {
-  text-align: center;
-  margin-top: 0.75rem;
-}
-
-.pauseHint span {
-  font-size: 0.78rem;
-  color: #64748b;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
 /* ── Responsive ───────────────────────────────────────────────────── */
 
 @media screen and (max-width: 768px) {
   .carouselContainer {
-    flex-direction: column;
-    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .desktopNavBtn {
+    display: none !important;
+  }
+
+  .mobileNavRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .commentCard {
@@ -362,3 +361,4 @@
     font-size: 1rem;
   }
 }
+

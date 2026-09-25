@@ -7,8 +7,8 @@ const faqItems = [
     a: 'No prior experience is required. The beginner course starts from scratch, guiding you through Godot interface navigation, nodes, and basic GDScript step by step.',
   },
   {
-    q: 'Why choose Godot 4?',
-    a: 'Godot 4 is completely free and open-source under the MIT license with zero royalties or fees. It is lightweight, launches in seconds, and uses GDScript, which is fast and intuitive to write.',
+    q: 'Why choose Godot?',
+    a: 'Godot is completely free and open-source under the MIT license with zero royalties or fees. It is lightweight, launches in seconds, and uses GDScript, which is fast and intuitive to write.',
   },
   {
     q: 'How do I use the written docs with YouTube videos?',
@@ -30,7 +30,7 @@ export default function FAQ() {
   return (
     <section className={styles.sectionWrapper} id="faq">
       <div className="container">
-        <div className={styles.sectionHeader}>
+        <div className={styles.sectionHeader} data-aos="fade-up">
           <div className={styles.sectionEyebrow}>
             <i className="fa-solid fa-circle-question"></i>
             Questions &amp; Answers
@@ -41,7 +41,7 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className={styles.faqList}>
+        <div className={styles.faqList} data-aos="fade-up" data-aos-delay="100">
           {faqItems.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (

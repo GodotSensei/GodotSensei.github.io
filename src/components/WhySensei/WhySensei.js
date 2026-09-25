@@ -7,7 +7,7 @@ export default function WhySensei() {
     <section className={styles.sectionWrapper}>
       <div className="container">
         {/* Section Header */}
-        <div className={styles.sectionHeader}>
+        <div className={styles.sectionHeader} data-aos="fade-up">
           <div className={styles.sectionEyebrow}>
             <i className="fa-solid fa-star"></i>
             The Sensei Approach
@@ -21,7 +21,12 @@ export default function WhySensei() {
         {/* Features Grid */}
         <div className={styles.grid}>
           {whySenseiFeatures.map((item, idx) => (
-            <div key={idx} className={styles.card}>
+            <div
+              key={idx}
+              className={styles.card}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
+            >
               <div className={styles.iconCircle}>
                 <i className={item.icon}></i>
               </div>

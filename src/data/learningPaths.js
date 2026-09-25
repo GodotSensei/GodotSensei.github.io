@@ -4,9 +4,9 @@
 export const learningPaths = [
   {
     badge: 'Step 1 • Beginner',
-    title: 'Godot 4 Fundamentals',
+    title: 'Godot Fundamentals',
     description:
-      'Master the core concepts of Godot 4 without feeling overwhelmed. Understand Nodes, the Scene tree, and write essential GDScript with confidence.',
+      'Master the core concepts of Godot without feeling overwhelmed. Understand Nodes, the Scene tree, and write essential GDScript with confidence.',
     topics: ['Nodes & Scene Hierarchy', 'GDScript Core Syntax', 'Input Mapping', 'Signals & Communication'],
     linkText: 'Start with Walking Sim',
     linkTo: '/docs/category/walking-sim',
