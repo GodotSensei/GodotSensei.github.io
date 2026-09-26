@@ -13,7 +13,7 @@ export default function CommunityBanner() {
             </div>
             <h3 className={styles.title}>Subscribe to Godot Sensei</h3>
             <p className={styles.description}>
-              Weekly Godot lessons, stylized shaders, and free companion project files.
+              Godot lessons, stylized shaders, and free companion project files.
             </p>
           </div>
 

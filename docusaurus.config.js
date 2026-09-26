@@ -11,10 +11,10 @@ const config = {
     v4: true,
   },
 
-  url: 'https://godot.yoogameart.com',
+  url: 'https://godotsensei.github.io',
   baseUrl: '/',
 
-  organizationName: 'yoogameart',
+  organizationName: 'godotsensei',
   projectName: 'godotsenei',
 
   onBrokenLinks: 'throw',
@@ -175,7 +175,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright ${new Date().getFullYear()} Godot Sensei. Free and open Godot 4 education.`,
+        copyright: `Copyright ${new Date().getFullYear()} Godot Sensei. Free and open Godot education.`,
       },
 
       prism: {

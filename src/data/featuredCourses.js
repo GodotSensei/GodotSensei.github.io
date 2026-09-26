@@ -9,7 +9,7 @@ export const featuredCourses = [
     badge: 'Beginner 3D Project',
     title: 'Make Your First 3D Game in Godot',
     description:
-      'Build a complete 3D game from installation to export. Set up first-person controls, collision physics, and beautiful lighting.',
+      'Build a complete 3D game from installation to export. No prior knowledge needed. Everything is explained from scratch!',
     imageSrc: '/img/HomePage/walkingSim.jpg',
     imageAlt: 'Make Your First Game in Godot Walking Simulator',
     primaryLink: '/docs/category/walking-sim',
@@ -17,7 +17,7 @@ export const featuredCourses = [
     secondaryLink: 'https://www.youtube.com/watch?v=auqOU55M90U',
     secondaryLabel: 'Watch Video',
   },
-  {
+  /* {
     id: 'stylized-environments',
     badgeIcon: 'fa-solid fa-palette',
     badge: 'Art and Shaders',
@@ -31,6 +31,6 @@ export const featuredCourses = [
     secondaryLink: 'https://www.youtube.com/@godotsensei',
     secondaryLabel: 'Watch Video',
     reverse: true,
-  },
+  }, */
 ];
 
